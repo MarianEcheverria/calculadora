@@ -1,4 +1,3 @@
-
 package proyectocalculadora;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -126,7 +125,7 @@ public class ventana extends JFrame {
 
         JButton btnIgual = new JButton("=");
         panelInicio.add(btnIgual);
-        btnIgual.setBounds(50, 220, 220, 30);
+        btnIgual.setBounds(50, 220, 130, 30);
         ActionListener resultado = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -145,7 +144,7 @@ public class ventana extends JFrame {
 
         JButton btnRaiz = new JButton("√");
         panelInicio.add(btnRaiz);
-        btnRaiz.setBounds(280, 220, 60, 30);
+        btnRaiz.setBounds(270, 220, 60, 30);
         ActionListener resRaiz = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -327,7 +326,7 @@ public class ventana extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 String union = "";
-                for (int i = 0; i < txtValor1.getText().length() - 100; i++) {
+                for (int i = 0; i < txtValor1.getText().length() - 1; i++) {
                     union = union + txtValor1.getText().charAt(i);
                 }
 
@@ -337,7 +336,6 @@ public class ventana extends JFrame {
         };
 
         btnBorrar.addActionListener(borrarUno);
-
 
            JButton btnBorrardo = new JButton("AC");
         panelInicio.add(btnBorrardo);
@@ -357,8 +355,9 @@ public class ventana extends JFrame {
             }
         };
 
-     btnBorrardo.addActionListener(borrardo);
-        }
+        btnBorrardo.addActionListener(borrardo);
+
+    }
     }
                 
 
