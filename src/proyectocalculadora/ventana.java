@@ -338,6 +338,33 @@ public class ventana extends JFrame {
 
         btnBorrar.addActionListener(borrarUno);
 
+
+           JButton btnBorrardo = new JButton("AC");
+        panelInicio.add(btnBorrardo);
+        btnBorrardo.setBounds(190, 220, 60, 30);
+
+        ActionListener borrardo = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String union = "";
+                for (int i = 0; i < txtValor1.getText().length() - 100; i++) {
+                    union = union + txtValor1.getText().charAt(i);
+                }
+
+                txtValor1.setText(union);
+
+            }
+        };
+
+     btnBorrardo.addActionListener(borrardo);
+        }
+    }
+                
+
+    
+
+    
     }
 }
 
