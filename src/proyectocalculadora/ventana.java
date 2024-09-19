@@ -96,9 +96,9 @@ public class ventana extends JFrame {
                     if (valor1 == 0) {
                         valor1 = Integer.parseInt(txtValor1.getText());
                     } else {
-                        valor1 -= Integer.parseInt(txtValor1.getText());
+                        valor1 /= Integer.parseInt(txtValor1.getText());
                     }
-                    simbolo = '-';
+                    simbolo = '/';
                     txtValor1.setText("");
                 }
             }
@@ -115,8 +115,12 @@ public class ventana extends JFrame {
                 if (txtValor1.getText().equals("")) {
                     JOptionPane.showMessageDialog(null, "Debe ingresar un valor");
                 } else {
-                   valor1 *= Integer.parseInt(txtValor1.getText());
-                    simbolo = 'x';
+                    if (valor1 == 0) {
+                        valor1 = Integer.parseInt(txtValor1.getText());
+                    } else {
+                        valor1 *= Integer.parseInt(txtValor1.getText());
+                    }
+                    simbolo = '*';
                     txtValor1.setText("");
                 }
             }
@@ -134,6 +138,10 @@ public class ventana extends JFrame {
                     resultado = valor1 + Integer.parseInt(txtValor1.getText());
                 } else if (simbolo == '-') {
                     resultado = valor1 - Integer.parseInt(txtValor1.getText());
+                }else if (simbolo == '/') {
+                    resultado = valor1 / Integer.parseInt(txtValor1.getText());
+                }else if (simbolo == '*') {
+                    resultado = valor1 * Integer.parseInt(txtValor1.getText());
                 }
                 txtValor1.setText(String.valueOf(resultado));
                 valor1 = 0;
